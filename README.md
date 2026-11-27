@@ -6,7 +6,7 @@ A working business card built as a printed circuit board. It lights up and share
 
 | Front | Reverse |
 | :---: | :---: |
-| ![Front of the CRUMB PCB card](images/card-front.jpg) | ![Illustrated reverse of the CRUMB PCB card](images/card-back.jpg) |
+| ![Front of the CRUMB PCB card](front.jpg) | ![Illustrated reverse of the CRUMB PCB card](back.jpg) |
 
 [**Full build guide at buildcrumb.com/card →**](https://buildcrumb.com/card)
 
