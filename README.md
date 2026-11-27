@@ -2,68 +2,76 @@
 
 **Make technology yours.**
 
-A battery-free NFC business card built as a printed circuit board. Bring a compatible phone near the antenna and the card's LED illuminates; the phone reads the stored website link.
+A working, battery-free NFC business card, manufactured as a printed circuit board. Bring a compatible phone near the gold antenna and the card's LED lights up. The phone can read a stored website address.
 
-**Full build guide:** [buildcrumb.com/card](https://buildcrumb.com/card)
+CRUMB is a free educational workshop helping people understand, build and customize technology.
+
+**[Explore the card and full manufacturing guide → buildcrumb.com/card](https://buildcrumb.com/card)**
 
 | Front — NFC antenna and contact details | Reverse — CRUMB artwork |
-| --- | --- |
-| ![Front of the manufactured CRUMB card](images/card-front.jpg) | ![Reverse of the manufactured CRUMB card](images/card-back.jpg) |
+| :---: | :---: |
+| ![Front of the manufactured CRUMB PCB card](images/card-front.jpg) | ![Reverse of the manufactured CRUMB PCB card](images/card-back.jpg) |
 
 ## How it works
 
-The phone generates a short-range electromagnetic field. The PCB antenna couples to that field, supplying energy to the passive NFC circuitry and LED. The phone reads the stored NFC data and offers to open the website. No battery or charging is required.
+A compatible phone's NFC reader generates a short-range electromagnetic field. The antenna on the card couples to that field, supplying energy to the passive NFC circuitry and allowing the LED to illuminate. The phone reads the NFC data and offers to open the stored website. No battery or charging is required.
 
 ## From idea to product
 
-I developed the concept, commissioned the electrical design from a PCB designer, and handled manufacturing preparation, ordering, testing, NFC configuration, and website integration. The original manufacturing process required additional work on the BOM and component placement files.
+I developed the concept, commissioned the electrical design from a PCB designer, and handled manufacturing preparation, ordering, testing, NFC configuration and website integration. The original assembly order required additional work preparing the bill of materials (BOM) and component placement list (CPL).
 
-The purpose of this project is to help others understand how to turn a hardware idea into something they can hold and use.
+The point of this project is to show that you do not have to be an electrical engineer to begin turning a hardware idea into a physical product. Work with qualified designers when needed, understand what you are ordering, and verify the result.
 
-## Manufacturing files — Rev 3.0
+## Project files — Rev 3.0
 
-| File | Purpose |
+| File | What it is for |
 | --- | --- |
-| [Gerbers and drill files](CRUMB%20PCB%20card%20gerbers/) | Copper, solder mask, paste, silkscreen, board outline and holes |
-| [bom.xls](bom.xls) | Assembly bill of materials |
-| [JLCPCB-formatted CPL](CRUMB_Rev3_JLCPCB_CPL_Formatted.csv) | Component coordinates, board sides and rotations |
-| [Original KiCad placement export](PCB_Business_card_Rev_3.0-all-pos.csv) | Reference placement data |
+| [**Download Gerber ZIP**](CRUMB-PCB-Rev3-Gerbers.zip?raw=true) | Upload this archive to a PCB fabrication service. It contains the existing copper, solder mask, paste, silkscreen, outline and drill outputs. |
+| [Individual Gerbers and drill files](CRUMB%20PCB%20card%20gerbers/) | Inspect the original fabrication outputs. |
+| [BOM — bom.xls](bom.xls?raw=true) | The existing component list; confirm part numbers, availability and assembly requirements with your manufacturer. |
+| [JLCPCB CPL CSV](CRUMB_Rev3_JLCPCB_CPL_Formatted.csv?raw=true) | The supplied placement list for automated assembly: coordinates, sides and rotations. |
+| [Original KiCad placement CSV](PCB_Business_card_Rev_3.0-all-pos.csv) | Unformatted reference placement export; not an additional component list. |
+| [Editable KiCad source](source/) | Recovered Rev 3.0 project, board and schematic for inspection and customization, subject to permissions below. |
 
-The Gerber job metadata describes a two-layer board approximately 86.65 × 54.81 mm, with nominal thickness of 1.6 mm. The photographed boards have a black-and-gold finish. Verify the actual manufacturing and finish options against the successful order; these are not a confirmed order specification.
+The Gerber job metadata describes a two-layer board approximately 86.65 × 54.81 mm, with a nominal thickness of 1.6 mm. The photographed boards have a black-and-gold finish. These are design observations, not a verified list of the exact manufacturing settings used for the successful order.
 
-**Release status:** A physical batch was successfully manufactured and tested by the project creator. The placement files were recovered from the original project records; the exact submitted order files, BOM part selections, and component orientations should be checked before placing another order. Editable KiCad source is not yet included.
+**Verification and limitations:** The project creator manufactured and tested a physical batch. The formatted CPL is byte-for-byte identical to the supplied file, and its four populated component placements match the recovered Rev 3.0 KiCad board. The original Gerber and BOM files are unchanged. The ZIP contains all twelve original fabrication-related files. The recovered KiCad board, schematic and project files are preserved byte-for-byte, but a fresh export has not yet been compared to the manufacturing package. Confirm the exact final revision, BOM part selection, component orientation and manufacturing settings against the successful order before submitting another order. Custom footprint libraries, artwork source assets and manufacturer order records may be needed for some edits and are not included in the current source folder.
 
 ## Make your own
 
-1. Read the [complete project guide](https://buildcrumb.com/card).
-2. Obtain the editable KiCad board and schematic files if you want to customize the design. The Gerbers are fabrication outputs, not editable design source.
-3. Replace the personal contact details, QR code and artwork as appropriate, without disturbing the functional antenna, pads or traces. Have any electrical changes reviewed.
-4. Zip the contents of the Gerber folder and upload them to your PCB manufacturer.
-5. Select PCB assembly if you want populated boards. Upload the BOM and CPL in the manufacturer's accepted formats.
-6. Confirm matched components, polarity, rotation, top/bottom placement, dimensions, finish and total quote before paying.
-7. Inspect and test the finished boards. Use a compatible NFC-writing application to write your own website URL if the tag is writable; verify the link and QR code independently.
+1. Read the [step-by-step CRUMB guide](https://buildcrumb.com/card).
+2. **Fabricating the existing board:** Upload the Gerber ZIP to a PCB manufacturer. Fabrication produces a bare board; choose component assembly if you want the electronics installed.
+3. **Customizing the design:** Use the editable KiCad project, not the Gerber files. Verify reuse rights first. Replace the contact information, QR code and artwork on the correct layers. Preserve the antenna, traces, pads and component layout unless a qualified designer reviews changes. Regenerate and inspect the manufacturing exports after edits.
+4. **Ordering assembled boards:** Provide the BOM and the JLCPCB-formatted CPL (or your factory's required equivalent). Ensure reference designators, part choices, rotations, pin 1, LED polarity, assembly sides and origin agree with the board. Review the assembly preview and quote before payment.
+5. **Test:** Inspect the finished boards, confirm the LED response and check NFC functionality with a compatible phone.
+6. **Program NFC:** If the tag is writable, use a compatible NFC-writing app to write an NDEF URI record containing your HTTPS website address. Read it back and test the link, and check the printed QR code independently. Do not permanently lock the tag until you have verified the final record.
 
-Start with a small prototype batch. Do not lock an NFC tag until you are certain the stored information is correct.
+Start with a small prototype batch. Manufacturing requirements and component availability vary; this repository is a reference, not a guarantee of successful fabrication or assembly.
 
 ## What it cost
 
-My first run cost approximately:
+| Expense | Approximate cost |
+| --- | ---: |
+| Commissioned electrical design | $250 |
+| Manufacturing and assembly | $250 |
+| **Total** | **$500** |
 
-- Electrical design: **$250**
-- Manufacturing and assembly order: **$250**
-- Total project cost: **$500**
+My approximate all-in cost was around **$30 per card**, including the one-time electrical design expense. This is not a manufacturing-only unit price or a guaranteed quote.
 
-My approximate all-in cost was around $30 per card. This includes one-time design expense; it is not a manufacturing-only unit price or a quote. Small batches can be relatively expensive, and per-unit costs depend on quantity, finish, assembly, components, shipping and other fees.
+Customizing a design you have permission to reuse may reduce engineering costs. Larger orders can reduce the cost per card; finish, assembly setup, parts, quantity and shipping all affect the final price.
 
 ## Licensing and credits
 
 Project concept and manufacturing: Wyeth Anzilotti / CRUMB. Electrical design: commissioned PCB designer.
 
-A public reuse license has not yet been added to this repository. Publication and reuse rights must be confirmed against the designer's agreement before granting a license. CRUMB branding, original artwork, and personal contact information should not be reused in a way that implies affiliation or endorsement.
+The designer has given permission to share the design, as reported by the project creator. A public reuse license is **pending confirmation of rights to grant downstream modification, manufacture and redistribution**. The proposed license is [CERN Open Hardware Licence v2 — Permissive (CERN-OHL-P-2.0)](https://spdx.org/licenses/CERN-OHL-P-2.0.html). That license is not in effect merely because it is proposed here. Contact the project creator before reproducing, modifying or redistributing the design unless you have independent permission.
+
+If granted, the hardware license will cover the specified electrical and manufacturing design files. CRUMB branding, original artwork, photographs and personal contact details are excluded from the proposed grant, including artwork incorporated into hardware files; replace them with your own material before distribution. Preserve any attribution required by the original designer.
 
 ## Connect
 
 - [CRUMB Workshop](https://buildcrumb.com)
 - [Full card guide](https://buildcrumb.com/card)
 - [GitHub](https://github.com/wyetherp)
-- Email: [wyeth@buildcrumb.com](mailto:wyeth@buildcrumb.com)
+- [LinkedIn](https://www.linkedin.com/in/wyetherp/)
+- [wyeth@buildcrumb.com](mailto:wyeth@buildcrumb.com)
