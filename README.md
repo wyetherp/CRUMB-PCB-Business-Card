@@ -131,6 +131,10 @@ If no NFC notification appears, check phone compatibility, NFC settings, reader 
 
 CRUMB is a free educational workshop for people who want to understand, build and customize technology. This repository is the home of the full manufacturing guide and project files. The [card showcase](https://buildcrumb.com/card/) introduces the project and provides contact information and links to the wider workshop.
 
-No reuse license has been established here yet. Sharing the files does not itself grant permission to modify, manufacture or redistribute them. Confirm the designer's applicable rights and permissions before reusing this design or its artwork.
+The electrical hardware design and manufacturing files (KiCad source, Gerbers, drill files, BOM and placement files) are licensed under the [CERN Open Hardware Licence v2 — Permissive (CERN-OHL-P-2.0)](LICENSE), to the extent CRUMB holds the necessary rights. You may study, modify, manufacture, share and sell your own versions under the licence terms, including retaining applicable notices and documenting modifications when distributing modified source.
+
+CRUMB branding, original artwork, photographs and personal contact information are not included in this hardware licence. Replace these elements with your own before distributing your customized cards. Third-party materials remain subject to their applicable rights. The design is provided as-is, without warranty; verify your manufacturing files before ordering.
+
+Earlier versions distributed under the MIT License retain any rights validly granted under that licence.
 
 **[Explore CRUMB](https://buildcrumb.com/build/) · [Card showcase](https://buildcrumb.com/card/) · [Contact](mailto:wyeth@buildcrumb.com)**
