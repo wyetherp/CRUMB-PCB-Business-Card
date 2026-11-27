@@ -2,13 +2,19 @@
 
 **Make technology yours.**
 
-A working business card built as a printed circuit board. It lights up and shares a website with your phone through NFC — without a battery.
+This repository contains a guide and the design and manufacturing files to help you make your own printed circuit board (PCB) business card. It lights up and shares a website with your phone through NFC — without a battery.
 
 | Front | Reverse |
 | :---: | :---: |
 | ![Front of the CRUMB PCB card](front.jpg) | ![Illustrated reverse of the CRUMB PCB card](back.jpg) |
 
 [**Meet the maker and explore CRUMB →**](https://buildcrumb.com/card)
+
+**Before you start:** I'll be honest — this isn't an easy project. This is my second iteration of the card. The first one worked, but not quite the way I wanted it to. All in all, I've probably spent 70–100 hours on this project.
+
+There are a lot of finicky steps along the way, but with enough time, patience and a willingness to figure things out, you can make one yourself. Think of this guide as a journal of my experience rather than a complete, step-by-step tutorial. I've tried to document as much as I can, including the files I used and the lessons I learned, but I can't cover every little detail or edge case you might encounter.
+
+If you get stuck or have any questions, feel free to reach out to me at [wyeth@buildcrumb.com](mailto:wyeth@buildcrumb.com). I'm happy to help.
 
 ## How the card works
 
